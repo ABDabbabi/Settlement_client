@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AlimenterQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AlimenterQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="dt_clients" Type="OutArgument(sd:DataTable)" />
@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1002,1819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1086,1846</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AlimenterQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="35">
+    <scg:List x:TypeArguments="x:String" Capacity="70">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,10 +46,12 @@
       <x:String>UiPath.Mail.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
+    <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -84,10 +86,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </scg:List>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AlimenterQueue" sap:VirtualizedContainerService.HintSize="1012,1594" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AlimenterQueue" sap:VirtualizedContainerService.HintSize="1096,1781" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:WorkbookApplication" Name="w_inputFile" />
     </Sequence.Variables>
@@ -96,33 +98,57 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="970,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Path fichier input :&quot;+io_str_pathTDL_Admin]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="970,359" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[w_inputFile]" WorkbookPath="[io_str_pathTDL_Admin]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1034,94" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Path fichier input :&quot;+io_str_pathTDL_Admin]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1034,474" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[w_inputFile]" WorkbookPath="[io_str_pathTDL_Admin]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,250" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,364" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_clients]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[w_inputFile.GetWorkbookSheet(0)]">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_clients]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Feuil2">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[w_inputFile]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,53" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,171" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_clients]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[w_inputFile.GetWorkbookSheet(0)]">
+                    <ui:ExcelReadRange.Range>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:ExcelReadRange.Range>
+                  </ui:ExcelReadRange>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:ExcelCloseWorkbook DisplayName="Close Workbook" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="ExcelCloseWorkbook_1" Workbook="[w_inputFile]" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="970,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Nombre de Client a ajouter dans la queue :&quot;+dt_clients.Rows.Count.ToString]" />
-    <If Condition="[dt_clients.Rows.Count=0]" sap:VirtualizedContainerService.HintSize="970,841" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1034,94" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Nombre de Client a ajouter dans la queue :&quot;+dt_clients.Rows.Count.ToString]" />
+    <If Condition="[dt_clients.Rows.Count=0]" sap:VirtualizedContainerService.HintSize="1034,888" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,34 +156,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,302" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Body="Le fichier input est vide" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Error robot" To="[in_config(&quot;adresseMailForErrorMSG&quot;).ToString]">
-            <ui:SendOutlookMail.Files>
-              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-            </ui:SendOutlookMail.Files>
-          </ui:SendOutlookMail>
-          <Throw Exception="[New SystemException(&quot;le fichier Input n'existe pas&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[New SystemException(&quot;le fichier Input n'existe pas&quot;)]" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="549,683" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence sap:VirtualizedContainerService.HintSize="589,727" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_clients]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="507,591" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_clients]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="527,616" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="client" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="473,471" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="493,494" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="str_PublicInstitution" />
                     <Variable x:TypeArguments="x:String" Name="str_NumSiret" />
@@ -173,7 +194,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,317" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,318" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
@@ -181,7 +202,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_ClientNum]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(37).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("Client NO").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -189,7 +210,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_PublicInstitution]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(45).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("PublicInstitution").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -197,7 +218,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_NumSiret]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(46).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("NumSiret").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -205,7 +226,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_SupplierSAP]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(47).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("SupplierSAP").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -213,7 +234,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_ServiceCode]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(48).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("ServiceCode").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -221,7 +242,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_Engagement]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(49).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("Engagement").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -229,7 +250,7 @@
                             <OutArgument x:TypeArguments="x:String">[str_STLEmail]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(50).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("STL_Email").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -237,38 +258,22 @@
                             <OutArgument x:TypeArguments="x:String">[str_MandatLayout]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[client(51).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[client("MandatLayout").ToString]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
-                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]">
+                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="431,25" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]">
                     <ui:AddQueueItem.ItemInformation>
-                      <InArgument x:TypeArguments="x:String" x:Key="ClientNum">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ClientNum" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="PublicInstitution">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_PublicInstitution" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="NumSiret">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_NumSiret" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="SupplierSAP">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_SupplierSAP" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="ServiceCode">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ServiceCode" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Engagement">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_Engagement" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="STL_Email">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_STLEmail" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="MandatLayout">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_MandatLayout" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ClientNum">[str_ClientNum]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PublicInstitution">[str_PublicInstitution]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="NumSiret">[str_NumSiret]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="SupplierSAP">[str_SupplierSAP]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="ServiceCode">[str_ServiceCode]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Engagement">[str_Engagement]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="STL_Email">[str_STLEmail]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="MandatLayout">[str_MandatLayout]</InArgument>
                     </ui:AddQueueItem.ItemInformation>
                   </ui:AddQueueItem>
                 </Sequence>

@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>920,10343</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>920,10220</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="78">
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="930,9438" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="930,9315" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_pathExecSettlementClient" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_SettlementClientLoginExist" />
@@ -164,19 +164,19 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <Sequence DisplayName="Connexion à TDL_Admin" sap:VirtualizedContainerService.HintSize="868,8671" sap2010:WorkflowViewState.IdRef="Sequence_18">
+    <Sequence DisplayName="Connexion à TDL_Admin" sap:VirtualizedContainerService.HintSize="868,8548" sap2010:WorkflowViewState.IdRef="Sequence_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="806,5027" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="806,4904" sap2010:WorkflowViewState.IdRef="TryCatch_2">
         <TryCatch.Try>
-          <ui:RetryScope DisplayName="RS_Click &quot;Login&quot;" sap:VirtualizedContainerService.HintSize="768,4794" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:05">
+          <ui:RetryScope DisplayName="RS_Click &quot;Login&quot;" sap:VirtualizedContainerService.HintSize="754,4671" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="3" RetryInterval="00:00:05">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
-                <Sequence DisplayName="Se connecter a TDL_Admin" sap:VirtualizedContainerService.HintSize="726,4545" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Se connecter a TDL_Admin" sap:VirtualizedContainerService.HintSize="712,4422" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="str_username" />
                     <Variable x:TypeArguments="x:String" Name="str_password" />
@@ -187,7 +187,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="A_incrementer de compteur des tentatives" sap:VirtualizedContainerService.HintSize="664,61" sap2010:WorkflowViewState.IdRef="Assign_22">
+                  <Assign DisplayName="A_incrementer de compteur des tentatives" sap:VirtualizedContainerService.HintSize="650,61" sap2010:WorkflowViewState.IdRef="Assign_22">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[int_tentativeDeConnexionTDL]</OutArgument>
                     </Assign.To>
@@ -195,17 +195,17 @@
                       <InArgument x:TypeArguments="x:Int32">[int_tentativeDeConnexionTDL+1]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,94" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;Tentative de connexion :&quot;+int_tentativeDeConnexionTDL.ToString]" />
-                  <ui:RetryScope DisplayName="RS_Ouvrir TDL_Admin" sap:VirtualizedContainerService.HintSize="664,1665" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:03">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,94" sap2010:WorkflowViewState.IdRef="LogMessage_17" Message="[&quot;Tentative de connexion :&quot;+int_tentativeDeConnexionTDL.ToString]" />
+                  <ui:RetryScope DisplayName="RS_Ouvrir TDL_Admin" sap:VirtualizedContainerService.HintSize="650,1542" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="3" RetryInterval="00:00:03">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence sap:VirtualizedContainerService.HintSize="622,1416" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                        <Sequence sap:VirtualizedContainerService.HintSize="608,1293" sap2010:WorkflowViewState.IdRef="Sequence_26">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="560,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign sap:VirtualizedContainerService.HintSize="546,61" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_pathExecSettlementClient]</OutArgument>
                             </Assign.To>
@@ -213,13 +213,13 @@
                               <InArgument x:TypeArguments="x:String">[in_Config("pathExecSettlementClient").ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="560,1204" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="546,1081" sap2010:WorkflowViewState.IdRef="Sequence_10">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="498,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                            <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_2">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Int32">[int_tentativeDeConnexion]</OutArgument>
                               </Assign.To>
@@ -227,9 +227,9 @@
                                 <InArgument x:TypeArguments="x:Int32">[int_tentativeDeConnexion+1]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="498,94" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Tentative connexion à Settlement :&quot;+int_tentativeDeConnexion.ToString]" />
-                            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[str_pathExecSettlementClient]" sap:VirtualizedContainerService.HintSize="498,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-                            <ui:UiElementExists DisplayName="Element Exists 'SettlementClient.exe  Login'" Exists="[bool_SettlementClientLoginExist]" sap:VirtualizedContainerService.HintSize="498,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,94" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Tentative connexion à Settlement :&quot;+int_tentativeDeConnexion.ToString]" />
+                            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[str_pathExecSettlementClient]" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+                            <ui:UiElementExists DisplayName="Element Exists 'SettlementClient.exe  Login'" Exists="[bool_SettlementClientLoginExist]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                               <ui:UiElementExists.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="05377184-ac41-46f9-b4cb-5debbfb75c72" InformativeScreenshot="1a529e69356d61541c06db0b268ff251" Selector="&lt;wnd app='settlementclient.exe' cls='#32770' title='Log in' /&gt;" WaitForReady="INTERACTIVE">
                                   <ui:Target.TimeoutMS>
@@ -244,7 +244,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:UiElementExists>
-                            <If Condition="[int_tentativeDeConnexion=3 and bool_SettlementClientLoginExist=False]" sap:VirtualizedContainerService.HintSize="498,583" sap2010:WorkflowViewState.IdRef="If_1">
+                            <If Condition="[int_tentativeDeConnexion=3 and bool_SettlementClientLoginExist=False]" sap:VirtualizedContainerService.HintSize="484,460" sap2010:WorkflowViewState.IdRef="If_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -252,35 +252,14 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="462,393" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <Sequence sap:VirtualizedContainerService.HintSize="400,270" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,94" sap2010:WorkflowViewState.IdRef="LogMessage_24" Message="[&quot;Le robot n'a pas pu se connecter à Settlement Client&quot;]" />
-                                  <Sequence sap:VirtualizedContainerService.HintSize="400,83" sap2010:WorkflowViewState.IdRef="Sequence_56">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot workflow" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
-                                      <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[in_Config("ExScreenshotsFolderPath").ToString]</InArgument>
-                                        <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[path_screenshot]</InOutArgument>
-                                      </ui:InvokeWorkflowFile.Arguments>
-                                    </ui:InvokeWorkflowFile>
-                                    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="le robot n'a pas pu ouvrir settlement Admin" DisplayName="Send SMTP Mail Message" Email="[in_str_usernameSMTP]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="338,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Name="RPA TDL Admin" Password="[in_str_passwordSMTP]" Port="587" SecureConnection="Auto" Server="smtp.office365.com" Subject="Error robot" To="[in_Config(&quot;adresseMailForErrorMSG&quot;).ToString]">
-                                      <ui:SendMail.Files>
-                                        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                                          <InArgument x:TypeArguments="x:String">[path_screenshot]</InArgument>
-                                        </scg:List>
-                                      </ui:SendMail.Files>
-                                    </ui:SendMail>
-                                  </Sequence>
-                                  <Throw Exception="[New SystemException(&quot;le robot n'a pas pu ouvrir TDL Admin&quot;)]" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,94" sap2010:WorkflowViewState.IdRef="LogMessage_24" Message="[&quot;Le robot n'a pas pu se connecter à Settlement Client&quot;]" />
+                                  <Throw Exception="[New SystemException(&quot;le robot n'a pas pu ouvrir TDL Admin&quot;)]" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                 </Sequence>
                               </If.Then>
                               <If.Else>
@@ -309,8 +288,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,94" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Se connecter à Settlement Client&quot;]" />
-                  <TryCatch DisplayName="TC_Get TDLAdmin Credential" sap:VirtualizedContainerService.HintSize="664,314" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,94" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Se connecter à Settlement Client&quot;]" />
+                  <TryCatch DisplayName="TC_Get TDLAdmin Credential" sap:VirtualizedContainerService.HintSize="650,314" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -349,7 +328,7 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
-                  <Assign sap:VirtualizedContainerService.HintSize="664,61" sap2010:WorkflowViewState.IdRef="Assign_20">
+                  <Assign sap:VirtualizedContainerService.HintSize="650,61" sap2010:WorkflowViewState.IdRef="Assign_20">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_password]</OutArgument>
                     </Assign.To>
@@ -357,7 +336,7 @@
                       <InArgument x:TypeArguments="x:String" xml:space="preserve">[new  System.Net.NetworkCredential(str_username,ss_password).Password]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:RetryScope DisplayName="RS_Type_Username" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:05">
+                  <ui:RetryScope DisplayName="RS_Type_Username" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="3" RetryInterval="00:00:05">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,246" sap2010:WorkflowViewState.IdRef="Sequence_23">
@@ -388,7 +367,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,228" sap2010:WorkflowViewState.IdRef="Sequence_54">
                         <sap:WorkflowViewStateService.ViewState>
@@ -417,7 +396,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <ui:RetryScope DisplayName="RS_Type &quot;Password&quot;" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:05">
+                  <ui:RetryScope DisplayName="RS_Type &quot;Password&quot;" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="3" RetryInterval="00:00:05">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
                         <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,208" sap2010:WorkflowViewState.IdRef="Sequence_22">
@@ -448,7 +427,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:RetryScope>
-                  <Assign sap:VirtualizedContainerService.HintSize="664,61" sap2010:WorkflowViewState.IdRef="Assign_19">
+                  <Assign sap:VirtualizedContainerService.HintSize="650,61" sap2010:WorkflowViewState.IdRef="Assign_19">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[bool_SettlementClientLoginExist]</OutArgument>
                     </Assign.To>
@@ -456,7 +435,7 @@
                       <InArgument x:TypeArguments="x:Boolean">[new Boolean]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="664,61" sap2010:WorkflowViewState.IdRef="Assign_23">
+                  <Assign sap:VirtualizedContainerService.HintSize="650,61" sap2010:WorkflowViewState.IdRef="Assign_23">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[bool_MSGErrLogin]</OutArgument>
                     </Assign.To>
@@ -464,7 +443,7 @@
                       <InArgument x:TypeArguments="x:Boolean">[new Boolean]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="C_Button &quot;Login&quot;" sap:VirtualizedContainerService.HintSize="664,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                  <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="C_Button &quot;Login&quot;" sap:VirtualizedContainerService.HintSize="650,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -483,7 +462,7 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,197" sap2010:WorkflowViewState.IdRef="Sequence_53">
                         <sap:WorkflowViewStateService.ViewState>
@@ -501,19 +480,19 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <ui:UiElementExists DisplayName="Element Exists 'Settelment Client'" Exists="[bool_SettlementClientWindowExist]" sap:VirtualizedContainerService.HintSize="664,107" sap2010:WorkflowViewState.IdRef="UiElementExists_13">
+                  <ui:UiElementExists DisplayName="Element Exists 'Settelment Client'" Exists="[bool_SettlementClientWindowExist]" sap:VirtualizedContainerService.HintSize="650,107" sap2010:WorkflowViewState.IdRef="UiElementExists_13">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="946c0ee1-4826-42c2-9b57-fdd317b7d026" InformativeScreenshot="4c6864fef3b67d29386fadd2884b2a1f" Selector="&lt;wnd app='settlementclient.exe' cls='#32770' title='Settlement client' /&gt;&lt;ctrl automationid='MenuBar' name='Application' role='menu bar' /&gt;&lt;ctrl name='Administration' role='menu item' /&gt;" TimeoutMS="5000" WaitForReady="COMPLETE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,94" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;settlement ouvert : &quot;+bool_SettlementClientWindowExist.ToString]" />
-                  <ui:UiElementExists DisplayName="Element Exists 'Static'" Exists="[bool_MSGErrLogin]" sap:VirtualizedContainerService.HintSize="664,107" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,94" sap2010:WorkflowViewState.IdRef="LogMessage_20" Message="[&quot;settlement ouvert : &quot;+bool_SettlementClientWindowExist.ToString]" />
+                  <ui:UiElementExists DisplayName="Element Exists 'Static'" Exists="[bool_MSGErrLogin]" sap:VirtualizedContainerService.HintSize="650,107" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5cf85a09-45bf-4e7d-a1dc-238b40c995d1" InformativeScreenshot="49862c058eb3842e1116c17ab659fcf5" Selector="&lt;wnd app='settlementclient.exe' cls='#32770' title='Settlement Client' /&gt;&lt;wnd ctrlid='65535' title='*' aaname='*' /&gt;" TimeoutMS="5000" WaitForReady="INTERACTIVE" />
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,94" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;message d'erreur de connexion : &quot;+bool_MSGErrLogin.ToString]" />
-                  <If Condition="[int_tentativeDeConnexionTDL&lt;3 and bool_MSGErrLogin]" sap:VirtualizedContainerService.HintSize="664,436" sap2010:WorkflowViewState.IdRef="If_10">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="650,94" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;message d'erreur de connexion : &quot;+bool_MSGErrLogin.ToString]" />
+                  <If Condition="[int_tentativeDeConnexionTDL&lt;3 and bool_MSGErrLogin]" sap:VirtualizedContainerService.HintSize="650,436" sap2010:WorkflowViewState.IdRef="If_10">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="400,246" sap2010:WorkflowViewState.IdRef="Sequence_50">
                         <sap:WorkflowViewStateService.ViewState>
@@ -534,7 +513,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="1115,1179" sap2010:WorkflowViewState.IdRef="Sequence_45">
                         <sap:WorkflowViewStateService.ViewState>
@@ -644,7 +623,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664,53" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="650,53" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                     <ui:CommentOut.Body>
                       <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="684,1875" sap2010:WorkflowViewState.IdRef="Sequence_44">
                         <sap:WorkflowViewStateService.ViewState>
@@ -784,7 +763,7 @@
           </ui:RetryScope>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="772,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="758,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
